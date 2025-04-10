@@ -36,6 +36,8 @@ public class InfoNameController {
     @ExceptionHandler(RateLimitExceededException.class)
     @ResponseStatus(HttpStatus.TOO_MANY_REQUESTS)
     public Object rateLimitExceeded(RateLimitExceededException e) {
+        log.error("rateLimitExceeded: ", e);
+
         return Map.of(
             "Ошибка", "Превышено число допустимых запросов",
             "Совет", "Попробуйте позже"
