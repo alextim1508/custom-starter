@@ -1,0 +1,4 @@
+rate-limiter:
+  enabled: true
+  attempts-limit: 2
+  attempt-expiration-seconds: 10
